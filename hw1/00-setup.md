@@ -24,30 +24,7 @@ There are two options for setting up your homework assignment. You can either us
 
 #### Option 1
 
-1. Go to the frontend-homework repository and hit the "fork" button. You may be asked to select which organization you wish to fork it to (if you are part of multiple organizations). Choose the one you typically use for school purposes.
-
-2. Clone the forked repository.
-
-```console
-$ git clone git@github.com:student/frontend-homework.git <folder-name>
-Cloning into '<folder-name>'...
-remote: Enumerating objects: 119, done.
-remote: Counting objects: 100% (119/119), done.
-remote: Compressing objects: 100% (75/75), done.
-remote: Total 119 (delta 58), reused 96 (delta 40), pack-reused 0
-Receiving objects: 100% (119/119), 507.92 KiB | 2.01 MiB/s, done.
-Resolving deltas: 100% (58/58), done.
-```
-
-3. Navigate into your newly created `<folder-name>` folder and check the remotes.
-
-```console
-$ git remote -v
-origin	git@github.com:student/frontend-homework.git (fetch)
-origin	git@github.com:student/frontend-homework.git (push)
-```
-
-#### Option 2
+Note: There is a video outlining this process in the Module 2 main page.
 
 1. Navigate to your preferred folder and clone the repository.
 
@@ -110,6 +87,33 @@ Branch 'main' set up to track remote branch 'main' from 'origin'.
 ```
 
 7. To make any changes, create a branch and push those changes wihtin that branch on the remote.
+
+#### Option 2
+
+1. Go to the frontend-homework repository and hit the "fork" button. You may be asked to select which organization you wish to fork it to (if you are part of multiple organizations). Choose the one you typically use for school purposes.
+
+2. Clone the forked repository.
+
+```console
+$ git clone git@github.com:student/frontend-homework.git <folder-name>
+Cloning into '<folder-name>'...
+remote: Enumerating objects: 119, done.
+remote: Counting objects: 100% (119/119), done.
+remote: Compressing objects: 100% (75/75), done.
+remote: Total 119 (delta 58), reused 96 (delta 40), pack-reused 0
+Receiving objects: 100% (119/119), 507.92 KiB | 2.01 MiB/s, done.
+Resolving deltas: 100% (58/58), done.
+```
+
+3. Navigate into your newly created `<folder-name>` folder and check the remotes.
+
+```console
+$ git remote -v
+origin	git@github.com:student/frontend-homework.git (fetch)
+origin	git@github.com:student/frontend-homework.git (push)
+```
+
+3. Make sure that you are pushing to your remote and not to my remote. 
 
 ### Submitting a Pull Request (PR)
 
