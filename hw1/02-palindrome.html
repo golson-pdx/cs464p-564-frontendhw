@@ -8,20 +8,53 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
     <script defer src="02-palindrome.js"></script>
+    <style>
+        .palindrome {
+          max-width: 600px;
+          margin: 0px auto;
+          background-color: white;
+          padding: 2em;
+          margin-top: 1em;
+        }
+
+        .palindrome .form-group:first-child {
+          margin: 4em 0em 4em 0em;
+        }
+
+        body {
+          background-color: #0D6EFD;
+        }
+
+        #result {
+          font-weight: bold;
+        }
+
+        .correct {
+          color: green;
+        }
+
+        .incorrect {
+          color: red;
+        }
+    </style>
   </head>
   <body>
-    <main>
-      <section>
-        <h1>Exercise 02 - Palindrome</h1>
-        <div>
-          <label>Enter a positive number:</label>
-          <input type="number" />
-        </div>
-        <div>
-          <p>Is this a palindrome?</p>
-          <div id="result"></div>
-        </div>
-      </section>
+    <main role="main">
+      <div class="container">
+        <section class="palindrome">
+          <h1>Exercise 02 - Palindrome</h1>
+          <form>
+            <div class="form-group">
+              <label for="number">Enter a positive number:</label>
+              <input type="number" class="form-control" id="number"/>
+            </div>
+            <div class="form-group">
+              <p>Is this a palindrome?</p>
+              <div id="result"></div>
+            </div>
+          </form>
+        </section>
+      </div>
     </main>
   </body>
 </html>

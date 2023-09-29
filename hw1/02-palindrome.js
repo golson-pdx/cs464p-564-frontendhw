@@ -7,13 +7,22 @@ function checkPalindrome() {
     const value = document.querySelector('input').value;
     const result = document.getElementById('result');
 
-    if (isNaN(value)) {
-        result.innerText = "Input is not a number, please try again."
-        return 1;
-    }
+    if (value != "") {
+        if (isNaN(value)) {
+            result.innerText = "Input is not a number, please try again."
+            result.classList.remove('correct');
+            result.classList.add('incorrect');
+            return 1;
+        }
 
-    if (value < 0) {
-        result.innerText = "Cannot use negative numbers, please try again."
+        if (value < 0) {
+            result.innerText = "Cannot use negative numbers, please try again."
+            result.classList.remove('correct');
+            result.classList.add('incorrect');
+            return 1;
+        }
+    } else {
+        result.innerText = "";
         return 1;
     }
 
@@ -22,8 +31,12 @@ function checkPalindrome() {
     
     if (valueString == valueReversed) {
         result.innerText = "This is a palindrome."
+        result.classList.remove('incorrect');
+        result.classList.add('correct');
     } else {
         result.innerText = "Not a palindrome."
+        result.classList.remove('correct');
+        result.classList.add('incorrect');
     }
 
     return 0;
