@@ -8,18 +8,16 @@ function checkPalindrome() {
 
   if (value != "") {
     if (isNaN(value)) {
-      result.innerText = "Input is not a number, please try again.";
-      changeStatus(false);
+      changeStatus("Input is not a number, please try again.", false);
       return 1;
     }
 
     if (value < 0) {
-      result.innerText = "Cannot use negative numbers, please try again.";
-      changeStatus(false);
+      changeStatus("Cannot use negative numbers, please try again.", false);
       return 1;
     }
   } else {
-    result.innerText = "";
+    changeStatus("", false);
     return 1;
   }
 
@@ -27,17 +25,16 @@ function checkPalindrome() {
   valueReversed = valueString.split("").reverse().join("");
 
   if (valueString == valueReversed) {
-    result.innerText = "This is a palindrome.";
-    changeStatus(true);
+    changeStatus("This is a palindrome.", true);
   } else {
-    result.innerText = "Not a palindrome.";
-    changeStatus(false);
+    changeStatus("Not a palindrome.", false);
   }
 
   return 0;
 }
 
-function changeStatus(correct) {
+function changeStatus(text, correct) {
+    result.innerText = text;
     if (correct) {
         result.classList.remove("incorrect");
         result.classList.add("correct");
