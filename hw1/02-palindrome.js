@@ -33,14 +33,14 @@ function checkPalindrome() {
 }
 
 function changeStatus(text, correct) {
-    const result = document.getElementById("result");
-    result.innerText = text;
-    if (correct) {
-        result.classList.remove("incorrect");
-        result.classList.add("correct");
-    } else {
-        result.classList.remove("correct");
-        result.classList.add("incorrect");
-    }
-    return 0;
+  const result = document.getElementById("result");
+  result.innerText = text;
+  if (correct) {
+    result.classList.remove("incorrect");
+    result.classList.add("correct");
+  } else {
+    result.classList.remove("correct");
+    result.classList.add("incorrect");
+  }
+  return 0;
 }
