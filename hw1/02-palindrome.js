@@ -4,7 +4,6 @@ elem.addEventListener("input", checkPalindrome);
 
 function checkPalindrome() {
   const value = document.querySelector("input").value;
-  const result = document.getElementById("result");
 
   if (value != "") {
     if (isNaN(value)) {
@@ -34,6 +33,7 @@ function checkPalindrome() {
 }
 
 function changeStatus(text, correct) {
+    const result = document.getElementById("result");
     result.innerText = text;
     if (correct) {
         result.classList.remove("incorrect");
