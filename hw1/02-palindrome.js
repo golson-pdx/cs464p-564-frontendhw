@@ -20,10 +20,10 @@ function checkPalindrome() {
     return 1;
   }
 
-  valueString = value.toString();
-  valueReversed = valueString.split("").reverse().join("");
+  const valueString = value.toString();
+  const valueReversed = valueString.split("").reverse().join("");
 
-  if (valueString == valueReversed) {
+  if (valueString === valueReversed) {
     changeStatus("This is a palindrome.", true);
   } else {
     changeStatus("Not a palindrome.", false);
