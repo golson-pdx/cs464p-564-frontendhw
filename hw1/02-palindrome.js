@@ -1,46 +1,54 @@
-const elem = document.querySelector("input");
+// Define elements from page that get used by these functions
+const elem = document.querySelector('input');
+const result = document.getElementById('result');
 
-elem.addEventListener("input", checkPalindrome);
+// Checks if input is a palindrome by converting to a string and reversing
+const checkPalindrome = function checkPalindrome() {
+  const value = elem.value;
 
-function checkPalindrome() {
-  const value = document.querySelector("input").value;
-
-  if (value != "") {
+  // First check if input is valid
+  if (value != '') {
     if (isNaN(value)) {
-      changeStatus("Input is not a number, please try again.", false);
-      return 1;
+      changeStatus('Input is not a number, please try again.', false);
+      retur1;
     }
 
     if (value < 0) {
-      changeStatus("Cannot use negative numbers, please try again.", false);
-      return 1;
+      changeStatus('Cannot use negative numbers, please try again.', false);
+      return;
     }
   } else {
-    changeStatus("", false);
-    return 1;
+    // Set message to default
+    changeStatus('', false);
+    return;
   }
 
+  // Convert to string and reverse in new constant
   const valueString = value.toString();
-  const valueReversed = valueString.split("").reverse().join("");
+  const valueReversed = valueString.split('').reverse().join('');
 
+  // Check if values match
   if (valueString === valueReversed) {
-    changeStatus("This is a palindrome.", true);
+    changeStatus('This is a palindrome.', true);
   } else {
-    changeStatus("Not a palindrome.", false);
+    changeStatus('Not a palindrome.', false);
   }
 
-  return 0;
-}
+  return;
+};
 
-function changeStatus(text, correct) {
-  const result = document.getElementById("result");
+// Function to update the status of the plaindrome checking form using Bootstrap classes
+const changeStatus = function changeStatus(text, correct) {
   result.innerText = text;
   if (correct) {
-    result.classList.remove("incorrect");
-    result.classList.add("correct");
+    result.classList.remove('text-danger');
+    result.classList.add('text-success');
   } else {
-    result.classList.remove("correct");
-    result.classList.add("incorrect");
+    result.classList.remove('text-success');
+    result.classList.add('text-danger');
   }
-  return 0;
-}
+  return;
+};
+
+// Add listener for input change
+elem.addEventListener('input', checkPalindrome);
