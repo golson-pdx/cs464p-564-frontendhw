@@ -12,48 +12,26 @@
     <style>
       .palindrome {
         max-width: 600px;
-        margin: 0px auto;
-        background-color: white;
-        padding: 2em;
-        margin-top: 1em;
-      }
-
-      .palindrome .form-group:first-child {
-        margin: 4em 0em 4em 0em;
-      }
-
-      body {
-        background-color: #0d6efd;
-      }
-
-      #result {
-        font-weight: bold;
-      }
-
-      .correct {
-        color: green;
-      }
-
-      .incorrect {
-        color: red;
       }
     </style>
   </head>
-  <body>
+  <body class="bg-primary">
     <main role="main">
       <div class="container">
-        <section class="palindrome">
-          <h1>Exercise 02 - Palindrome</h1>
-          <form>
-            <div class="form-group">
-              <label for="number">Enter a positive number:</label>
-              <input type="number" class="form-control" id="number" />
-            </div>
-            <div class="form-group">
-              <p>Is this a palindrome?</p>
-              <div id="result"></div>
-            </div>
-          </form>
+        <section class="palindrome m-auto mt-4 card">
+          <div class="card-body">
+            <h1 class="card-title">Exercise 02 - Palindrome</h1>
+            <form>
+              <div class="form-group mt-5 mb-5">
+                <label for="number">Enter a positive number:</label>
+                <input type="number" class="form-control" id="number" />
+              </div>
+              <div class="form-group">
+                <p>Is this a palindrome?</p>
+                <div id="result" class="fw-bold"></div>
+              </div>
+            </form>
+          </div>
         </section>
       </div>
     </main>
