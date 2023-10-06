@@ -10,7 +10,7 @@ const checkPalindrome = function checkPalindrome() {
   if (value != '') {
     if (isNaN(value)) {
       changeStatus('Input is not a number, please try again.', false);
-      retur1;
+      return;
     }
 
     if (value < 0) {
@@ -33,8 +33,6 @@ const checkPalindrome = function checkPalindrome() {
   } else {
     changeStatus('Not a palindrome.', false);
   }
-
-  return;
 };
 
 // Function to update the status of the plaindrome checking form using Bootstrap classes
@@ -47,7 +45,6 @@ const changeStatus = function changeStatus(text, correct) {
     result.classList.remove('text-success');
     result.classList.add('text-danger');
   }
-  return;
 };
 
 // Add listener for input change
