@@ -128,7 +128,7 @@ or
 $ git checkout -b <newbranch>
 ```
 
-2. Make changes to your code in that branch.
+2. Make changes to your code in that branch. 
 
 3. Commit the changes to the remote.
 
