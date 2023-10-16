@@ -29,13 +29,11 @@ const buttonStop = function buttonStop(changeToStop) {
     } else {
         button.classList.replace('btn-danger', 'btn-success');
         button.value = 'Start';
-        interval = 0;
     }
 }
 
 // Function that changes the color of the background element
 const changeColor = function changeColor() {
-    console.log("Change color");
     bodyElement.style.background = randomColor();
 }
 
@@ -49,13 +47,13 @@ const startInterval = function startInterval() {
 // Stops interval
 const stopInterval = function stopInterval() {
     clearInterval(interval);
+    interval = 0;
     buttonStop(false);
 }
 
 // Function that handles the submit event
 const handleSubmit = function handleSubmit(event) {
     event.preventDefault();
-    console.log("We here");
     if (interval === 0) {
         bodyElement.style.background = randomColor();
         startInterval();
