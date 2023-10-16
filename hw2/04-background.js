@@ -13,7 +13,7 @@ const randomBetween = function randomBetween(min, max) {
     return min + Math.floor(Math.random() * (max - min + 1));
 }
 
-// Function to generate a random RGBA code for color
+// Cont'd from above - function to generate a random RGBA code for color
 const randomColor = function randomColor() {
     const r = randomBetween(0, 255);
     const g = randomBetween(0, 255);

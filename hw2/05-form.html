@@ -9,12 +9,63 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
     <script defer src="05-form.js"></script>
+    <style>
+      .form-card {
+        max-width: 550px;
+      }
+    </style>
   </head>
-  <body>
-    <main>
+  <body class="bg-dark">
+    <div class="container">
+    <main class="form-card m-auto mt-4 card p-3">
       <form>
         <h1>Exercise 05 - Form</h1>
+        <div class="form-group">
+          <label for="fullName">Full Name:</label>
+          <input type="text" class="form-control" id="fullName" name="fullName">
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="registrationStatus">Registration Status:</label>
+          <select id="registrationStatus" class="form-control">
+            <option selected>Choose an Option</option>
+            <option>...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="courses">Have you taken any of the following courses?</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Programming Languages" id="programmingLanguages">
+          <label class="form-check-label" for="programmingLanguages">
+            Programming Languages
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Operating Systems" id="operatingSystems">
+          <label class="form-check-label" for="operatingSystems">
+            Operating Systems
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Full Stack Web Development" id="fullStackWebDevelopment">
+          <label class="form-check-label" for="fullStackWebDevelopment">
+            Full Stack Web Development
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="comments">Anything Else?</label>
+          <input type="textarea" class="form-control" id="comments" name="comments">
+        </div>
+        <div class="form-group">
+          <input type="submit" class="form-control btn btn-primary" id="submit" name="submit">
+          <input type="reset" class="form-control btn btn-secondary" id="reset" name="reset">
+        </div>
       </form>
     </main>
+    </div>
   </body>
 </html>
