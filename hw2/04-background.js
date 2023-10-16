@@ -2,9 +2,13 @@
 const form = document.querySelector('.background');
 const bodyElement = document.querySelector('body');
 const input = document.querySelector("input[name='seconds']");
-const colors = ["blue", "green", "purple", "red"];
 const button = document.querySelector('.submit');
 let interval = 0;
+
+// https://stackoverflow.com/questions/23095637/how-do-you-get-random-rgb-in-javascript
+const randomBetween = function randomBetween(min, max) {
+    return min + Math.floor(Math.random() * (max - min + 1));
+}
 
 const buttonStop = function buttonStop(changeToStop) {
     if (changeToStop) {
@@ -39,8 +43,10 @@ const stopInterval = function stopInterval() {
 
 const changeColor = function changeColor() {
     console.log("Change color");
-    const i = Math.floor(Math.random() * (3 - 0 + 1) + 0);
-    bodyElement.style.backgroundColor = colors[i];
+    const r = randomBetween(0, 255);
+    const g = randomBetween(0, 255);
+    const b = randomBetween(0, 255);
+    bodyElement.style.background = `rgba(${r}, ${g}, ${b}, 0.75)`;
 }
 
 form.addEventListener("submit", handleSubmit);
