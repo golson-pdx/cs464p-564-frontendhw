@@ -11,8 +11,6 @@ const handleSubmit = function handleSubmit(event) {
     const courses = [];
     const comments = form.elements.comments.value;
 
-    console.log(courseElements);
-
     for (let i = 0; i < courseElements.length; i++) {
         if (courseElements[i].checked) {
             courses.push(courseElements[i].value);
