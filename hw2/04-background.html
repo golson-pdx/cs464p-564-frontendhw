@@ -10,20 +10,20 @@
     <script defer src="04-background.js"></script>
   </head>
   <body>
-    <main>
-      <h1>Exercise 04 - Background</h1>
-      <p>
-        The background color will change every few seconds (as indicated below).
-        You can stop this behavior and you can also change how often the
-        background color changes.
-      </p>
-      <div>
-        <label>Background change interval (seconds): </label>
-        <input />
-      </div>
-      <div>
-        <input />
-      </div>
+    <main class="background">
+        <h1>Exercise 04 - Background</h1>
+        <p>
+          The background color will change every few seconds (as indicated below).
+          You can stop this behavior and you can also change how often the
+          background color changes.
+        </p>
+        <div>
+          <label>Background change interval (seconds): </label>
+          <input type="number"/>
+        </div>
+        <div>
+          <input type="submit" onclick="handleSubmit(event)"/>
+        </div>
     </main>
   </body>
 </html>
