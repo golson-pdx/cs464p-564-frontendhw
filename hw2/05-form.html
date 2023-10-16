@@ -13,6 +13,12 @@
       .form-card {
         max-width: 550px;
       }
+
+      .form-group {
+        margin-top: 1.5em;
+      }
+
+
     </style>
   </head>
   <body class="bg-dark">
@@ -21,48 +27,55 @@
       <form>
         <h1>Exercise 05 - Form</h1>
         <div class="form-group">
-          <label for="fullName">Full Name:</label>
+          <label for="fullName"><strong>Full Name:</strong></label>
           <input type="text" class="form-control" id="fullName" name="fullName">
         </div>
         <div class="form-group">
-          <label for="email">Email:</label>
+          <label for="email"><strong>Email:</strong></label>
           <input type="email" class="form-control" id="email" name="email">
         </div>
         <div class="form-group">
-          <label for="registrationStatus">Registration Status:</label>
+          <label for="registrationStatus"><strong>Registration Status:</strong></label>
           <select id="registrationStatus" class="form-control">
-            <option selected>Choose an Option</option>
-            <option>...</option>
+            <option disabled selected value> Choose an Option </option>
+            <option>Unregistered</option>
+            <option>Registered</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="courses">Have you taken any of the following courses?</label>
+          <label for="courses"><strong>Have you taken any of the following courses?</strong></label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Programming Languages" id="programmingLanguages">
+          <input class="form-check-input" type="checkbox" value="Programming Languages" id="programmingLanguages" name="courses">
           <label class="form-check-label" for="programmingLanguages">
             Programming Languages
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Operating Systems" id="operatingSystems">
+          <input class="form-check-input" type="checkbox" value="Operating Systems" id="operatingSystems" name="courses">
           <label class="form-check-label" for="operatingSystems">
             Operating Systems
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Full Stack Web Development" id="fullStackWebDevelopment">
+          <input class="form-check-input" type="checkbox" value="Full Stack Web Development" id="fullStackWebDevelopment" name="courses">
           <label class="form-check-label" for="fullStackWebDevelopment">
             Full Stack Web Development
           </label>
         </div>
         <div class="form-group">
-          <label for="comments">Anything Else?</label>
+          <label for="comments"><strong>Anything Else?</strong></label>
           <input type="textarea" class="form-control" id="comments" name="comments">
         </div>
         <div class="form-group">
-          <input type="submit" class="form-control btn btn-primary" id="submit" name="submit">
-          <input type="reset" class="form-control btn btn-secondary" id="reset" name="reset">
+          <div class="row">
+            <div class="col">
+              <input type="submit" class="form-control btn btn-primary" id="submit" name="submit" >
+            </div>
+            <div class="col">
+              <input type="reset" class="form-control btn btn-secondary" id="reset" name="reset">
+            </div>
+          </div>
         </div>
       </form>
     </main>
