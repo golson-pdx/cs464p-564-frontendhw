@@ -1,4 +1,4 @@
-// Add your code here
+// Exercise 05 - Form
 const form = document.querySelector('form');
 
 const handleSubmit = function handleSubmit(event) {

@@ -1,3 +1,4 @@
+// Exercise 04 - Background
 // Declare values for elements on the background page
 const form = document.querySelector('.background');
 const bodyElement = document.querySelector('body');
