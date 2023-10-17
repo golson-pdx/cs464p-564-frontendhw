@@ -1,7 +1,7 @@
 // Declare values for elements on the background page
 const form = document.querySelector('.background');
 const bodyElement = document.querySelector('body');
-const input = document.querySelector("input[name='seconds']");
+const input = document.querySelector('input[name="seconds"]');
 const button = document.querySelector('.submit');
 
 // Declare initial interval value at 0 so we know if the value has changed when toggling settings
@@ -62,4 +62,4 @@ const handleSubmit = function handleSubmit(event) {
     }
 }
 
-form.addEventListener("submit", handleSubmit);
+form.addEventListener('submit', handleSubmit);

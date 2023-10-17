@@ -17,7 +17,7 @@ const handleSubmit = function handleSubmit(event) {
         }
     }
 
-    let coursesString = "";
+    let coursesString = '';
     if (courses.length > 0) {
         for (let i = 0; i < courses.length; i++) {
             coursesString += `${courses[i]}`;
@@ -30,4 +30,4 @@ const handleSubmit = function handleSubmit(event) {
     console.log(`Full name: ${name}\nEmail: ${email}\nRegistration Status: ${registrationStatus}\nClasses Taken: ${coursesString}\nComments: ${comments}`);
 }
 
-form.addEventListener("submit", handleSubmit);
+form.addEventListener('submit', handleSubmit);
