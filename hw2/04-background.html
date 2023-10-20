@@ -23,9 +23,8 @@
     </style>
   </head>
   <body class="background">
-    <div class="container">
       <main class="background-card m-auto mt-4 card p-3">
-          <div class="">
+          <form>
             <h1>Exercise 04 - Background</h1>
             <p class="form-group">
               The background color will change every few seconds (as indicated below).
@@ -34,12 +33,12 @@
             </p>
             <div class="form-group">
               <label>Background change interval (seconds): </label>
-              <input type="number" class="form-control" name="seconds"/>
+              <input type="number" class="form-control" name="seconds" min="1" required />
             </div>
             <div class="form-group">
-              <input type="submit" onclick="handleSubmit(event)" class="submit btn btn-success" value="Start"/>
+              <input type="submit" class="submit btn btn-success" value="Start"/>
             </div>
-          </div>
+          </form>
       </main>
     </div>
   </body>

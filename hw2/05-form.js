@@ -3,6 +3,7 @@ const form = document.querySelector('form');
 
 const handleSubmit = function handleSubmit(event) {
     event.preventDefault();
+    // Collect form values
     const name = form.elements.fullName.value;
     const email = form.elements.email.value;
     const registrationStatus = form.elements.registrationStatus.value;
@@ -11,21 +12,15 @@ const handleSubmit = function handleSubmit(event) {
     const courses = [];
     const comments = form.elements.comments.value;
 
-    for (let i = 0; i < courseElements.length; i++) {
-        if (courseElements[i].checked) {
-            courses.push(courseElements[i].value);
+    // Get all checked course values from form, updated to follow AirBnb Javascript guidelines 
+    courseElements.forEach((element) => {
+        if (element.checked) {
+            courses.push(element.value);
         }
-    }
+    });
 
-    let coursesString = '';
-    if (courses.length > 0) {
-        for (let i = 0; i < courses.length; i++) {
-            coursesString += `${courses[i]}`;
-            if (i+1 < courses.length) {
-                coursesString += `, `
-            }
-        }
-    }
+    // Simply need to join courses by comma 
+    let coursesString = courses.join(', ');
 
     console.log(`Full name: ${name}\nEmail: ${email}\nRegistration Status: ${registrationStatus}\nClasses Taken: ${coursesString}\nComments: ${comments}`);
 }

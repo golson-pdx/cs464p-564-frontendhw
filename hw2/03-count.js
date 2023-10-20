@@ -10,10 +10,10 @@ const handleKeyDown = function handleKeyDown() {
     const inputValue = input.value.replace(/\s/g, '');
 
     // A regular expression to quickly search for matching substrings in the string. Word boundaries are added at the beginning & end of the substring to limit search to full words and not just characters
-    const regEx = new RegExp(`\\b${inputValue}\\b`, 'g');
+    const regEx = new RegExp(`\\b(${inputValue})\\b`, 'ig');
 
     // Replace substrings in string with span containing highlight class and text inside
-    body.innerHTML = originalBodyText.replaceAll(regEx, `<span class="highlight">${inputValue}</span>`);
+    body.innerHTML = originalBodyText.replaceAll(regEx, `<span class="highlight">$1</span>`);
 };
 
 input.addEventListener('keydown', handleKeyDown);

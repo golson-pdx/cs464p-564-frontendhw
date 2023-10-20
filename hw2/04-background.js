@@ -8,17 +8,11 @@ const button = document.querySelector('.submit');
 // Declare initial interval value at 0 so we know if the value has changed when toggling settings
 let interval = 0;
 
-// https://stackoverflow.com/questions/23095637/how-do-you-get-random-rgb-in-javascript
-// Random function to select value between min and max
-const randomBetween = function randomBetween(min, max) {
-    return min + Math.floor(Math.random() * (max - min + 1));
-}
-
 // Cont'd from above - function to generate a random RGBA code for color
 const randomColor = function randomColor() {
-    const r = randomBetween(0, 255);
-    const g = randomBetween(0, 255);
-    const b = randomBetween(0, 255);
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
     return `rgba(${r}, ${g}, ${b}, 0.75)`;
 }
 
@@ -40,7 +34,6 @@ const changeColor = function changeColor() {
 
 // Function that begins interval based on form's seconds value and multiplies by 1000 to convert to millisecond value
 const startInterval = function startInterval() {
-    const i = 0;
     interval = setInterval(changeColor, input.value * 1000);
     buttonStop(true);
 }
