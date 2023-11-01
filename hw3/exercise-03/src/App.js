@@ -1,29 +1,20 @@
-import './App.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Search from "./pages/Search";
+import Houses from "./pages/Houses";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="/home"
-        >
-          Home
-        </a>
-        <a
-          className="App-link"
-          href="/search"
-        >
-          Search
-        </a>
-        <a
-          className="App-link"
-          href="/houses"
-        >
-          Houses
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="search" element={<Search />} />
+          <Route path="houses" element={<Houses />} />
+        </Route>
+      </Routes>
   );
 }
 
