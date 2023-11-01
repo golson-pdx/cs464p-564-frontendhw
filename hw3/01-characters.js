@@ -32,14 +32,14 @@ const appendCharacter = function appendCharacterToBody(data_item) {
 
     // Initialize single character DOM element
     const singleCharacter = document.createElement('div');
-    singleCharacter.classList.add('col-sm-6','text-center','character');
+    singleCharacter.classList.add('col-sm-6', 'col-lg-3', 'text-center','character');
 
     // Create character image DOM element
     const image = document.createElement('img');
     image.classList.add('img-fluid');
     image.src = character.imgSrc;
     image.alt = `${character.fullName}`;
-    singleCharacter.append(img);
+    singleCharacter.append(image);
 
     // Create character name DOM element
     const fullName = document.createElement('h2');

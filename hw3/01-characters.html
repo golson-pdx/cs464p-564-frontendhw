@@ -15,7 +15,7 @@
       }
 
       #characters {
-        max-width: 500px;
+        max-width: 900px;
         margin: 0px auto;
         font-weight: bold;
       }
@@ -24,9 +24,14 @@
         padding: 20px;
       }
 
+      /* https://cloudinary.com/guides/automatic-image-cropping/5-ways-to-crop-images-in-html-css */
       #characters .character img{
-        max-height: 210px;
+        width: 200px; 
+        height: 200px; 
+        overflow: hidden; 
         margin-bottom: 10px;
+        object-fit: cover;
+        object-position: 25% 25%; 
       }
 
       #characters .character:hover {
