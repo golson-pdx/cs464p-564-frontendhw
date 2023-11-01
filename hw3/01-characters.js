@@ -21,5 +21,5 @@ const data = fetch(url).then(response => {
 
 const appendCharacter = function appendCharacterToBody(data_item) {
     console.log(data_item);
-    characterBody.innerHTML += `<div class="col-6 text-center character"><img src="${data_item.imageUrl}" alt="${data_item.firstName} ${data_item.lastName}" class="img-fluid"/><h2>${data_item.firstName} ${data_item.lastName}</h2><span class="title">${data_item.title}</span></div>`
+    characterBody.innerHTML += `<div class="col-sm-6 text-center character"><img src="${data_item.imageUrl}" alt="${data_item.firstName} ${data_item.lastName}" class="img-fluid"/><h2>${data_item.firstName} ${data_item.lastName}</h2><span class="title">${data_item.title}</span></div>`
 }
