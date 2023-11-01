@@ -9,11 +9,33 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="01-characters.js"></script>
+    <style>
+        #characters {
+          max-width: 500px;
+          margin: 0px auto;
+          color: black;
+          font-weight: bold;
+        }
+
+        #characters .character {
+          padding: 10px;
+        }
+
+        #characters .character img{
+          max-height: 210px;
+          margin-bottom: 10px;
+        }
+
+        #characters .character:hover {
+          background-color: #00435B;
+          color: white;
+        }
+    </style>
   </head>
   <body>
-    <main>
-      <h1>Exercise 01 - Characters</h1>
-      <section></section>
+    <main class="container">
+        <h1>Exercise 01 - Characters</h1>
+        <section id="characters" class="row"></section>
     </main>
   </body>
 </html>
