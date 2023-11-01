@@ -34,18 +34,25 @@ const Search = () => {
     <>
       <h1>Search</h1>
       <form onSubmit={handleSubmit}>
-        <label>
+        <div class="form-group">
+        <label class="form-label">
           Find character:
-          <input
+        </label>
+        <input
             type="text"
+            class="form-label"
             value={character}
+            required
             onChange={(e) => setCharacter(e.target.value)}
           />
-          <input type="submit" />
-        </label>
+        </div>
+        <div class="form-group">
+          <input class="btn btn-primary" type="submit" />
+        </div>
       </form>
       <div class="" id="result">
-        <h1>{characterData.name}</h1>
+        <h2>Result:</h2>
+        <h3>{characterData.name}</h3>
         <img src={characterData.image} alt={characterData.name} />
       </div>
     </>
