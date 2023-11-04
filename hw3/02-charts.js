@@ -65,7 +65,7 @@ const getData = async function fetchDataFromURL() {
     data = await response.json();
 
     // Render chart with data retrieved from API
-    renderChart(data);
+    renderChart(getHouses(data), getCount());
   } catch (error) {
     // Error from API fetch
     console.error('Request failed', error);
@@ -132,17 +132,17 @@ const getCount = function getCountFromCountArray() {
 };
 
 // Function that renders the chart in display
-const renderChart = function renderChartFromData(data) {
+const renderChart = function renderChartFromData(houses, count) {
   const donutChart = document.querySelector('.donut-chart');
 
   new Chart(donutChart, {
     type: 'doughnut',
     data: {
-      labels: getHouses(data),
+      labels: houses,
       datasets: [
         {
           label: 'Houses',
-          data: getCount(),
+          data: count,
           backgroundColor: backgroundColors,
           borderColor: borderColors,
           borderWidth: 1,
