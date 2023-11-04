@@ -3,30 +3,29 @@ const url = "https://thronesapi.com/api/v2/Characters";
 const characterBody = document.querySelector("#characters");
 
 // Fetch data from API
-const data = fetch(url)
-  .then((response) => {
-    //Show status of request in console
-    console.log("Request successful", response);
-    return response.json();
-  })
-  .then((data) => {
+const getData = async function getDataFromThronesAPI() {
+  try {
+    const response = await fetch(url);
+    console.log(response);
+    const data = await response.json();
+    console.log(response);
+
     //Loop through data
-    data.forEach((data_item) => {
-      appendCharacter(data_item);
+    data.forEach((dataItem) => {
+      appendCharacter(dataItem);
     });
-  })
-  .catch((error) => {
-    console.error("Request failed", error);
-  });
+  } catch (error) {
+    console.error('Request failed', error);
+  }
 
-const appendCharacter = function appendCharacterToBody(data_item) {
-  console.log(data_item);
+}
 
+const appendCharacter = function appendCharacterToBody(dataItem) {
   // Create object from data_item so we can reuse
   const character = {
-    imgSrc: data_item.imageUrl,
-    fullName: `${data_item.firstName} ${data_item.lastName}`,
-    title: data_item.title,
+    imgSrc: dataItem.imageUrl,
+    fullName: `${dataItem.firstName} ${dataItem.lastName}`,
+    title: dataItem.title,
   };
 
   // Initialize single character DOM element
@@ -59,3 +58,5 @@ const appendCharacter = function appendCharacterToBody(data_item) {
   // Append single character to character body
   characterBody.append(singleCharacter);
 };
+
+getData();

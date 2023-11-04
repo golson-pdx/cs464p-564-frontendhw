@@ -130,7 +130,7 @@ const getHouses = function getHousesFromData(data) {
 // Function to get values of each house count to insert into chart
 const getCount = function getCountFromCountArray() {
   houseCount.forEach((count_item) => {
-    count.push(parseInt(count_item.count));
+    count.push(count_item.count);
   });
 };
 
