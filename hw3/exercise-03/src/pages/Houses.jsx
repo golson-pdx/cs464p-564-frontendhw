@@ -1,8 +1,8 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
-import { Chart, ArcElement } from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { useState } from "react";
-Chart.register(ArcElement);
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Houses = () => {
   // Colors for doughnut chart sections

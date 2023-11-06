@@ -17,7 +17,7 @@ const Search = () => {
       .then((data) => {
         //Loop through data
         data.forEach((data_item) => {
-          if (data_item.fullName.includes(character)) {
+          if (data_item.fullName.toLowerCase().includes(character.toLowerCase())) {
             setCharacterData({
               name: data_item.fullName,
               image: data_item.imageUrl,
