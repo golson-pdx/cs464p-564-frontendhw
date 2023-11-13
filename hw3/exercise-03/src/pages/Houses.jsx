@@ -1,4 +1,12 @@
-// Colors for doughnut chart sections
+import React from "react";
+import { Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { useState } from "react";
+ChartJS.register(ArcElement, Tooltip, Legend);
+
+const Houses = () => {
+  // Colors for doughnut chart sections
+
 const backgroundColors = [
   'rgba(54, 162, 235, 0.8)',
   'rgba(255, 206, 86, 0.8)',
@@ -53,7 +61,9 @@ const borderColors = [
 const url = 'https://thronesapi.com/api/v2/Characters';
 
 // Houses with their associated # of characters
-const houseCount = [];
+const [houseCount, setHouseCount] = useState([]);
+const [count, setCount] = useState([]);
+const [houses, setHouses] = useState([]);
 
 // Fetch data from API asyncronously
 const getData = async function fetchDataFromURL() {
@@ -62,10 +72,12 @@ const getData = async function fetchDataFromURL() {
     console.log('Request successful', response);
 
     // Now turn data into a json readable format
-    data = await response.json();
+    const data = await response.json();
 
-    // Render chart with data retrieved from API
-    renderChart(getHouses(data), getCount());
+    // Set data retrieved from API
+    getHouses(data);
+    getCount();
+
   } catch (error) {
     // Error from API fetch
     console.error('Request failed', error);
@@ -76,6 +88,7 @@ const getData = async function fetchDataFromURL() {
 const getHouses = function getHousesFromData(data) {
 
   const houses = [];
+  const houseCount = [];
   // Loop through data
   data.forEach((dataItem) => {
     // Strip 'house' from family names
@@ -119,7 +132,8 @@ const getHouses = function getHousesFromData(data) {
     }
   });
 
-  return houses;
+  setHouses(houses);
+  setHouseCount(houseCount);
 };
 
 // Function to get values of each house count to insert into chart
@@ -128,29 +142,31 @@ const getCount = function getCountFromCountArray() {
   houseCount.forEach((countItem) => {
     count.push(countItem.count);
   });
-  return count;
+  setCount(count);
 };
 
-// Function that renders the chart in display
-const renderChart = function renderChartFromData(houses, count) {
-  const donutChart = document.querySelector('.donut-chart');
-
-  new Chart(donutChart, {
-    type: 'doughnut',
-    data: {
-      labels: houses,
-      datasets: [
-        {
-          label: 'Houses',
-          data: count,
-          backgroundColor: backgroundColors,
-          borderColor: borderColors,
-          borderWidth: 1,
-        },
-      ],
-    },
-  });
-};
 
 // Initialize everything
 getData();
+
+const data = {
+    labels: houses,
+    datasets: [
+      {
+        label: "Houses",
+        data: count,
+        backgroundColor: backgroundColors,
+        borderColor: borderColors,
+        borderWidth: 1,
+      },
+    ],
+};
+
+return (
+    <>
+      <h1>Houses</h1>
+      <Doughnut data={data} />
+    </>
+);
+};
+export default Houses;
